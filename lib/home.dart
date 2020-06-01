@@ -1,18 +1,18 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:mrfoxie/data/data.dart';
-import 'package:mrfoxie/model/categories_model.dart';
-import 'package:mrfoxie/model/wallpaper_model.dart';
-import 'package:mrfoxie/widget/widget.dart';
 import 'package:http/http.dart' as http;
+import 'package:mrfoxie/widget/widget.dart';
 
-class MrFoxie extends StatefulWidget {
+import 'data/data.dart';
+import 'model/categories_model.dart';
+import 'model/wallpaper_model.dart';
+class HomePage extends StatefulWidget {
   @override
-  _MrFoxieState createState() => _MrFoxieState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MrFoxieState extends State<MrFoxie> {
+class _HomePageState extends State<HomePage> {
   List<CategoriesModel> categories = new List();
   List<WallpaperModel> wallpapers = new List();
   getTrendingWallpaper() async {
@@ -23,7 +23,7 @@ class _MrFoxieState extends State<MrFoxie> {
     // print(response.body.toString());
     Map<String, dynamic> jsonData = jsonDecode(response.body);
     jsonData["photos"].forEach((element) {
-      // print(element);
+      print(element);
       WallpaperModel wallpaperModel = WallpaperModel();
       wallpaperModel = WallpaperModel.fromMap(element);
       wallpapers.add(wallpaperModel);
