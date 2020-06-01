@@ -1,7 +1,7 @@
 class WallpaperModel {
   String photographer;
   String photographer_url;
-  int photographer_id;
+  String photographer_id;
   SrcModel src;
   WallpaperModel(
       {this.src,

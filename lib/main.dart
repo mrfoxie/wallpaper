@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Mr. Foxie',
       theme: ThemeData(
         primaryColor: Colors.white,
+        primarySwatch: Colors.deepOrange,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomePage(),

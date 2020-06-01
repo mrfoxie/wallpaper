@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<CategoriesModel> categories = new List();
-  List<WallpaperModel> wallpapers = new List();
+  List<WallpaperModel> wallpaper = new List();
   getTrendingWallpaper() async {
     var response = await http.get(
       "https://api.pexels.com/v1/curated?per_page=15&page=1",
@@ -23,10 +23,10 @@ class _HomePageState extends State<HomePage> {
     // print(response.body.toString());
     Map<String, dynamic> jsonData = jsonDecode(response.body);
     jsonData["photos"].forEach((element) {
-      print(element);
-      WallpaperModel wallpaperModel = WallpaperModel();
-      wallpaperModel = WallpaperModel.fromMap(element);
-      wallpapers.add(wallpaperModel);
+      // print(element);
+      WallpaperModel wallpapersModel = WallpaperModel();
+      wallpapersModel = WallpaperModel.fromMap(element);
+      wallpaper.add(wallpapersModel);
     });
     setState(() {});
   }
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 20.0,
               ),
-              wallpapersList(wallpapers: wallpapers, context: context),
+              wallpapersList(wallpapers: wallpaper, context: context),
             ],
           ),
         ),
