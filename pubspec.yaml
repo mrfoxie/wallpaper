@@ -33,7 +33,7 @@ dependencies:
   image_gallery_saver: ^1.2.2
   permission_handler: 4.4.0
   random_string:
-  dio:
+  dio: ^5.0.3
 
 dev_dependencies:
   flutter_test:
